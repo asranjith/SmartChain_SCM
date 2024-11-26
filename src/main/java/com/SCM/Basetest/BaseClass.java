@@ -37,13 +37,13 @@ public class BaseClass {
 	public Assertutility autils=new Assertutility();
 	
 	
-    @BeforeSuite(groups = {"smokeTest","regressionTest"})
+    @BeforeSuite(groups = {"smokeTest","regressionTest","integration"})
     public void connectToDB() throws SQLException {
     
     }
     
     @Parameters("BROWSER")
-    @BeforeClass(groups = {"smokeTest","regressionTest"})
+    @BeforeClass(groups = {"smokeTest","regressionTest","integration"})
        public void launchBrowser(@Optional("chrome") String browser) throws IOException, ParseException {
 		String URL = jsonutils.readDataFromJsonFile(IpathConstant.jsonpathlogin,"url");
     	String BROWSER=jsonutils.readDataFromJsonFile(IpathConstant.jsonpathlogin,"browser");
@@ -72,13 +72,13 @@ public class BaseClass {
 //    	Reporter.log("=====Logout is Successfull=====",true);
 //    }
     
-    @AfterClass(groups = {"smokeTest","regressionTest"})
+    @AfterClass(groups = {"smokeTest","regressionTest","integration"})
     public void closeBrowser() {
     	driver.quit();
     	Reporter.log("=====BROWSER IS CLOSED======",true);
     }
     
-    @AfterSuite(groups = {"smokeTest","regressionTest"})
+    @AfterSuite(groups = {"smokeTest","regressionTest","integration"})
     public void closeDB() {
  
     }
