@@ -46,14 +46,14 @@ public class BaseClass {
     @BeforeClass(groups = {"smokeTest","regressionTest","integration"})
        public void launchBrowser(@Optional("chrome") String browser) throws IOException, ParseException {
 		String URL = jsonutils.readDataFromJsonFile(IpathConstant.jsonpathlogin,"url");
-    	String BROWSER=jsonutils.readDataFromJsonFile(IpathConstant.jsonpathlogin,"browser");
-    	System.out.println(URL+" "+BROWSER);
-		if(BROWSER.equalsIgnoreCase("chrome")) {
+    	//String BROWSER=jsonutils.readDataFromJsonFile(IpathConstant.jsonpathlogin,"browser");
+    	//System.out.println(URL+" "+BROWSER);
+		if(browser.equalsIgnoreCase("chrome")) {
 			driver=new ChromeDriver();
 			Reporter.log("====CHROME IS LAUNCHED SUCCESSFULLY====",true);
-		}else if(BROWSER.equalsIgnoreCase("firefox")) {
+		}else if(browser.equalsIgnoreCase("firefox")) {
 			driver=new FirefoxDriver();
-		}else if(BROWSER.equalsIgnoreCase("edge")) {
+		}else if(browser.equalsIgnoreCase("edge")) {
 			driver=new EdgeDriver();
 		}
 		sdriver=driver;

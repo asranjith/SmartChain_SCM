@@ -50,14 +50,14 @@ public class ListenerUtility extends BaseClass implements ITestListener, ISuiteL
 		Reporter.log(result.getMethod().getMethodName() + ">=========start==========>");
 		test = report.createTest(result.getMethod().getMethodName());
 		UtilityClassObject.setTest(test);
-		test.log(Status.INFO, result.getMethod().getMethodName() + "==> STARTED <==");
+		UtilityClassObject.getTest().log(Status.INFO, result.getMethod().getMethodName() + "==> STARTED <==");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 
 		Reporter.log(result.getMethod().getMethodName() + ">=========success==========>");
-		test.log(Status.INFO, result.getMethod().getMethodName() + "==> COMPLETED <==");
+		UtilityClassObject.getTest().log(Status.INFO, result.getMethod().getMethodName() + "==> COMPLETED <==");
 
 	}
 
@@ -69,15 +69,15 @@ public class ListenerUtility extends BaseClass implements ITestListener, ISuiteL
 		String date = LocalDateTime.now().toString().replace(":", "_");
 		TakesScreenshot efWebDriver = (TakesScreenshot) BaseClass.sdriver;
 		String filepath = efWebDriver.getScreenshotAs(OutputType.BASE64);
-		test.addScreenCaptureFromBase64String(filepath, testMethodName + "_" + date);
-		test.log(Status.FAIL, testMethodName);
-		test.log(Status.FAIL, result.getThrowable());
+		UtilityClassObject.getTest().addScreenCaptureFromBase64String(filepath, testMethodName + "_" + date);
+		UtilityClassObject.getTest().log(Status.FAIL, testMethodName);
+		UtilityClassObject.getTest().log(Status.FAIL, result.getThrowable());
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		Reporter.log(result.getMethod().getMethodName() + ">=========skipped==========>");
-		test.log(Status.FAIL, result.getThrowable());
+		UtilityClassObject.getTest().log(Status.FAIL, result.getThrowable());
 	}
 
 }
