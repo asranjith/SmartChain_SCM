@@ -1,0 +1,28 @@
+{
+  "addUnit": {
+    "unitName1": "Killogram",
+    "unitName2": "Gram",
+    "unitName3": "Litter",
+    "unitName4": "Count"
+  },
+  "addCategory": {
+    "category1": "soap",
+    "category2": "detergent",
+    "category3": "toothpaste",
+    "category4": "rice",
+    "category5": "snack",
+    "category6": "chocolate",
+    "category7": "wafer",
+    "category8": "cosmetics"
+  },
+  "addProduct": {
+    "product1": "medimix",
+    "product2": "surfexcel",
+    "product3": "sensodent",
+    "product4": "basmati",
+    "product5": "lays", 
+    "product6": "dairymilk",
+    "product7": "kitkat",
+    "product8": "lipstick"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "addArea1": {
+   "areaname": "BTM",
+    "areacode": "560078"
+  },
+  "addArea2": {
+   "areaname": "JB nagar",
+    "areacode": "560017"
+  },
+  "addArea3": {
+   "areaname": "Basavanagudi",
+    "areacode": "560019"
+  },
+   "addArea4": {
+   "areaname": "Rajaji nagar",
+    "areacode": "560010"
+  },
+   "addArea5": {
+   "areaname": "Hebbal",
+    "areacode": "560043"
+  } 
+}
