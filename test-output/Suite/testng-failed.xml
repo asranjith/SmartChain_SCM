@@ -20,18 +20,8 @@
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- smartChainTestCase.Retailer -->
-      <class name="smartChainTestCase.Manufacturer">
-        <methods>
-          <include name="manageStock"/>
-          <include name="connectToDB"/>
-          <include name="closeBrowser"/>
-          <include name="closeDB"/>
-          <include name="launchBrowser"/>
-        </methods>
-      </class> <!-- smartChainTestCase.Manufacturer -->
       <class name="smartChainTestCase.Admin">
         <methods>
-          <include name="addProduct"/>
           <include name="connectToDB"/>
           <include name="closeBrowser"/>
           <include name="closeDB"/>

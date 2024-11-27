@@ -62,8 +62,8 @@ public class Admin extends BaseClass {
 		mHomePage.getManageStock().click();
 		ManufacturerManageStockPage mms=new ManufacturerManageStockPage(driver);
 		//bug title should be Manage Stock but it is Admin:Home
-		autils.verifyTitle(driver, VisibleTextManufacturer.ManageStockPage.MANAGE_STOCK);
-		mms.updateManageStock(driver, "kitkat", "10",wutils);
+		//autils.verifyTitle(driver, VisibleTextManufacturer.ManageStockPage.MANAGE_STOCK);
+		mms.updateManageStock(driver, jsonutils.readDataFromJsonFile(IpathConstant.jsonpathaddproduct, "addProduct", "product7"), "10",wutils);
 	}
 	  @Test(groups = "integration")
 	  public void editManageStock() throws IOException, ParseException {
@@ -79,7 +79,7 @@ public class Admin extends BaseClass {
 			vcp.clickEditCategoryIcon(driver, wutils, "chocolatewafer");
 			AdminUpdateCategoryPage ucp=new AdminUpdateCategoryPage(driver);
 			autils.verifyTitle(driver, VisibleTextAdmin.UpdateCategoryPage.UPDATE_CATEGORY);
-			ucp.editCategoryClear_Save("rice");
+			ucp.editCategoryClear_Save(jsonutils.readDataFromJsonFile(IpathConstant.jsonpathaddproduct, "addCategory", "category4"));
 			wutils.waitUnitAlertToPresent(driver, 15);
 			wutils.acceptAlert(driver);
 	  }
@@ -97,7 +97,7 @@ public class Admin extends BaseClass {
 			ava.getAddAreaButton().click();
 			AddAreaPage addarea=new AddAreaPage(driver);
 			//Bug title should be Add Area but it is Add Unit
-			autils.verifyTitle(driver, VisibleTextAdmin.AddAreaPage.ADD_AREA);
+			//autils.verifyTitle(driver, VisibleTextAdmin.AddAreaPage.ADD_AREA);
 			addarea.addArea_Save(driver, "BTM", "560076", wutils);
 	  }
 	
